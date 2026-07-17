@@ -1,0 +1,5 @@
+node_modules
+dist
+.svelte-kit
+test/regression/fixture/bun.lock
+*.bun-build

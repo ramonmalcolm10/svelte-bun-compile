@@ -1,0 +1,52 @@
+{
+  "name": "svelte-bun-compile",
+  "version": "0.0.1",
+  "description": "Compile your SvelteKit app into a Bun single-file executable",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && bun build src/index.ts --outdir dist --target node && cp src/server.ts dist/server.ts && tsc -p tsconfig.types.json",
+    "typecheck": "tsc --noEmit",
+    "test:regression": "bash test/regression/run.sh"
+  },
+  "peerDependencies": {
+    "@sveltejs/kit": "^2.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "^2.0.0",
+    "@types/bun": "^1",
+    "@types/node": "^20",
+    "svelte": "^5.0.0",
+    "typescript": "^5",
+    "vite": "^7.0.0"
+  },
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "sveltekit-adapter",
+    "bun",
+    "compile",
+    "binary",
+    "single-file",
+    "executable"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ramonmalcolm10/svelte-bun-compile#readme",
+  "bugs": {
+    "url": "https://github.com/ramonmalcolm10/svelte-bun-compile/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramonmalcolm10/svelte-bun-compile.git"
+  }
+}
