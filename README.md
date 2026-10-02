@@ -1,5 +1,22 @@
 # svelte-bun-compile
 
+> [!WARNING]
+> **Deprecated.** SvelteKit now ships its own Bun adapter,
+> [`@sveltejs/adapter-bun`](https://svelte.dev/docs/kit/adapter-bun), which
+> compiles your app into a single executable too. Switch to it:
+>
+> ```sh
+> bun remove svelte-bun-compile && bun add -D @sveltejs/adapter-bun
+> ```
+>
+> ```js
+> import adapter from '@sveltejs/adapter-bun';
+> // the executable is written to build/server
+> adapter({ buildOptions: { compile: 'bun-linux-x64' } }); // or bun-linux-arm64, or true for this machine
+> ```
+>
+> Then build with `bun --bun run build`. This package gets no further releases.
+
 **Compile your SvelteKit app into a Bun single-file executable.**
 
 Sibling of [next-bun-compile](https://www.npmjs.com/package/next-bun-compile).
